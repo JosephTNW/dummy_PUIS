@@ -15,6 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('userID')->unique()->comment('User ID for the application');
+            $table->integer('gpa')->nullable()->comment('GPA of the user');
+            $table->string('major')->nullable()->comment('Major of the user');
+            $table->string('minor')->nullable()->comment('Minor of the user'); 
+            $table->string('graduationYear')->nullable()->comment('Graduation year of the user');
+            $table->string('bio')->nullable()->comment('Bio of the user');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
